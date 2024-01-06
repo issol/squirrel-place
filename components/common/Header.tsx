@@ -1,11 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from '../../styles/header.module.scss';
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import styles from '../../styles/header.module.scss'
 
 interface Props {
-  onClickLogo?: () => void;
-  rightElements?: React.ReactElement[];
+  onClickLogo?: () => void
+  rightElements?: React.ReactElement[]
 }
 
 const HeaderComponent = ({ onClickLogo, rightElements }: Props) => {
@@ -13,23 +13,23 @@ const HeaderComponent = ({ onClickLogo, rightElements }: Props) => {
     <header className={styles.header}>
       <div className={styles.flexItem}>
         <Link
-          href="/"
+          href='/'
           onClick={onClickLogo}
           className={styles.box}
-          aria-label="홈으로 이동"
+          aria-label='홈으로 이동'
         >
           <Image
-            src="/inflearn.png"
+            src='/inflearn.png'
             width={110}
             height={20}
-            alt="인프런 로고"
+            alt='인프런 로고'
             priority
           />
         </Link>
       </div>
       {rightElements && <div className={styles.flexItem}>{rightElements}</div>}
     </header>
-  );
-};
+  )
+}
 
-export default HeaderComponent;
+export default HeaderComponent
